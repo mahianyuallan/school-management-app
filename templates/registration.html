@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="../static/css/login.css" rel="stylesheet">
+        <script src="../static/js/script.js"></script>
+
+
+</head>
+<body>
+
+
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img src="" id="icon" alt="User Icon" /> -->
+        <h1>SMA</h1>
+      <h3>Sign Up</h3>
+    </div>
+      <p style="color: green">{{ word }}</p>
+      <p style="color: red">{{ fail }}</p>
+      <p style="color: red">{{ userex }}</p>
+    <!-- Registration Form -->
+    <form method="post" action="/registration">
+      <input type="text" id="login" name="USERNAME" placeholder="Username*" required=True>
+        <input type="text" id="login" name="FIRST_NAME" placeholder="First Name*" required=True>
+        <input type="text" id="login" name="LAST_NAME" placeholder="Last Name*" required=True>
+        <input type="text" id="login" name="COURSE_ID" placeholder="Course Id*" required=True>
+        <input type="text" id="login" name="UNIT_ID" placeholder="Unit Id*" required=True>
+      <input type="password" id="login"  name="PASSWORD" placeholder="password*"required=True>
+      <input type="submit" class="fadeIn fourth" value="Sign up">
+    </form>
+
+    <!-- Login -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/login">Login</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

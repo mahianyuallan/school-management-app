@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Edit</title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+        <link href="../static/css/style.css" rel="stylesheet">
+        <script src="../static/js/script.js"></script>
+</head>
+<body style="background-image: url('https://images.pexels.com/photos/2647794/pexels-photo-2647794.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: no-repeat;
+
+  background-size: cover;">
+
+<!--Nav bar-->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">SMA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+<!--
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          -->
+        </ul>
+
+            <br>
+          <button class="btn btn-outline-success my-2 my-sm-0" id="header-btn2"><a href="/logout" style="color:white">Log out</button>
+
+      </div>
+    </nav>
+
+<br>
+<br>
+<br>
+
+
+<!--  Toggle Forms -->
+<div class="tabs" >
+  <div class="tab-button-outer">
+    <ul id="tab-button">
+      <li><a href="#tab01">LEC</a></li>
+      <li><a href="#tab02">DEPART</a></li>
+      <li><a href="#tab03">COURSE</a></li>
+      <li><a href="#tab04">UNIT</a></li>
+      <li><a href="#tab05">EXAM</a></li>
+      <li><a href="#tab06">STUDENT</a></li>
+      <li><a href="#tab07">RESULTS</a></li>
+    </ul>
+  </div>
+  <div class="tab-select-outer">
+    <select id="tab-select">
+      <option value="#tab01">LEC</option>
+      <option value="#tab02">DEPART</option>
+      <option value="#tab03">COURSE</option>
+      <option value="#tab04">UNIT</option>
+      <option value="#tab05">EXAM</option>
+        <option value="#tab06">STUDENT</option>
+        <option value="#tab07">RESULTS</option>
+    </select>
+  </div>
+
+<!--Lec Tab-->
+  <div id="tab01" class="tab-contents">
+    <h3 >Edit Lecturer</h3>
+      <!--Form 1 -->
+      <div class="container">
+
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/edlec" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="LECTURER_NAME" placeholder="Lecturer Name" type="text" required=True >
+        <br>
+        <input name ="UNIT_ID" placeholder="Unit Id" type="number"  >
+        <br>
+        <input name ="DEPARTMENT_ID" placeholder="Department Id" type="number" >
+            <br>
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Dept Tab-->
+  <div id="tab02" class="tab-contents">
+   <!--Form 2 -->
+      <div class="container">
+          <h3 >Edit departments</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/eddept" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="DEPARTMENT_NAME" placeholder="Department Name" type="text" required=True >
+        <br>
+
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Course Tab-->
+  <div id="tab03" class="tab-contents">
+      <!--Form 3-->
+      <div class="container">
+          <h3 >Edit courses</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="edcourse" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="COURSE_NAME" placeholder="Course Name" type="text" required=True >
+        <br>
+
+        <input name ="DEPARTMENT_ID" placeholder="Department Id" type="number" >
+            <br>
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Unit Tab-->
+  <div id="tab04" class="tab-contents">
+
+      <!-- Form 4-->
+      <div class="container">
+          <h3 >Edit Units</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/edunit" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="UNIT_NAME" placeholder="Unit Name" type="text" required=True >
+        <br>
+        <input name ="COURSE_ID" placeholder="Course Id" type="number"  >
+        <br>
+
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Exam Tab-->
+  <div id="tab05" class="tab-contents">
+
+      <!-- Form 5 -->
+      <div class="container">
+          <h3 >Edit Exams</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/edexam" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="EXAM_NAME" placeholder="Exam Name" type="text" required=True >
+        <br>
+        <input name ="UNIT_ID" placeholder="Unit Id" type="number"  >
+        <br>
+
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Student Tab-->
+  <div id="tab06" class="tab-contents">
+
+      <!-- Form 6 -->
+      <div class="container">
+          <h3 >Edit Students</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/edstud" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+		<input name ="USERNAME" placeholder="UserName" type="text" required=True >
+        <br>
+        <input name ="FIRST_NAME" placeholder="First Name" type="text" >
+        <br>
+        <input name ="LAST_NAME" placeholder="Last Name" type="text"  >
+            <br>
+        <input name ="COURSE_ID" placeholder="Course Id" type="numbber" >
+        <br>
+        <input name ="UNIT_ID" placeholder="Unit Id" type="number" >
+        <br>
+        <input name="PASSWORD" placeholder="Password" type="password">
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+
+<!--Results-->
+  <div id="tab07" class="tab-contents">
+
+      <!-- Form 7 -->
+      <div class="container">
+          <h3 >Edit Results</h3>
+	<div class="row">
+<br>
+
+        <br>
+        <form action="/edresults" method="post">
+            <label>What do you want to do?</label>
+             <select id = "myList"  name="ACTION" >
+               <option value = "INSERT" default>INSERT</option>
+               <option value = "DELETE">DELETE</option>
+             </select>
+        <input name ="RESULT_ID" placeholder="Result Id" type="number"  >
+        <br>
+        <input name ="STUDENT_ID" placeholder="Student Id" type="number"  >
+        <br>
+        <input name ="EXAM_ID" placeholder="Exam Id" type="number" >
+        <br>
+        <input name ="CAT_1" placeholder="Cat 1" type="number"  >
+        <br>
+        <input name ="CAT_2" placeholder="Cat 2" type="number"  >
+        <br>
+        <input name ="CAT_3" placeholder="Cat 3" type="number"  >
+        <br>
+        <input name ="EXAM_MARKS" placeholder="Exam Marks" type="number"  >
+        <br>
+
+
+
+<button class="btn primary-button"><input type="submit"></button>
+</form>
+	</div>
+</div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--Bottom Footer-->
+		<div class="bottom section-padding container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright">
+							<p>© <span>2020</span> <a href="/" class="transition">SMA</a> All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--Bottom Footer-->
+
+</body>
+</html>

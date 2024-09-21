@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="../static/css/login.css" rel="stylesheet">
+        <script src="../static/js/script.js"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img src="" id="icon" alt="User Icon" /> -->
+        <h1>SMA</h1>
+      <h3>Login</h3>
+    </div>
+{{ error }}
+    <!-- Login Form -->
+    <form method="post" action="/login">
+      <input type="text" id="login" class="fadeIn second" name="USERNAME" placeholder="username">
+      <input type="password" id="password" class="fadeIn third" name="PASSWORD" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Login">
+    </form>
+
+    <!-- Sign Up -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/registration">Sign Up</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

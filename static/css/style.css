@@ -1,0 +1,339 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); /* Tabs css*/
+
+nav > .nav.nav-tabs{
+
+  border: none;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+
+}
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active
+{
+  border: none;
+    padding: 18px 25px;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+}
+
+nav > div a.nav-item.nav-link.active:after
+ {
+  content: "";
+  position: relative;
+  bottom: -60px;
+  left: -10%;
+  border: 15px solid transparent;
+  border-top-color: #e74c3c ;
+}
+.tab-content{
+  background: #ffffff;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    border-top:5px solid #e74c3c;
+    border-bottom:5px solid #e74c3c;
+    padding:30px 25px;
+}
+
+nav > div a.nav-item.nav-link:hover,
+nav > div a.nav-item.nav-link:focus
+{
+  border: none;
+    background: #e74c3c;
+    color:#fff;
+    border-radius:0;
+    transition:background 0.20s linear;
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+.tabs {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+#tab-button {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#tab-button li {
+  display: table-cell;
+  width: 20%;
+}
+#tab-button li a {
+  display: block;
+  padding: .5em;
+  background: #eee;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+}
+#tab-button li:not(:first-child) a {
+  border-left: none;
+}
+#tab-button li a:hover,
+#tab-button .is-active a {
+  border-bottom-color: transparent;
+  background: #fff;
+}
+.tab-contents {
+  padding: .5em 2em 1em;
+  border: 1px solid #ddd;
+}
+
+
+
+.tab-button-outer {
+  display: none;
+}
+.tab-contents {
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .tab-button-outer {
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+  .tab-select-outer {
+    display: none;
+  }
+  .tab-contents {
+    position: relative;
+    top: -1px;
+    margin-top: 0;
+  }
+}
+
+input {
+  /*margin: 40px 25px;
+  width: 200px;
+
+   */
+  display: block;
+  border: none;
+  /*padding: 10px 0;
+
+   */
+  border-bottom: solid 1px #1abc9c;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+
+
+}
+
+input:focus, input:valid {
+ box-shadow: none;
+ outline: none;
+ background-position: 0 0;
+}
+
+input::-webkit-input-placeholder {
+ font-family: 'roboto', sans-serif;
+ -webkit-transition: all 0.3s ease-in-out;
+ transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+/* FontAwesome for working BootSnippet :> */
+#how-we-do{
+ color:#ffffff;
+}
+#how-we-do h4{
+	text-align:left !important;
+}
+#how-we-do .how-bg-img{
+	background-image: url("https://images.pexels.com/photos/373488/pexels-photo-373488.jpeg?cs=srgb&dl=building-ceiling-classroom-daylight-373488.jpg&fm=jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+    padding: 300px 0;
+	filter:grayscale(100%);
+}
+#how-we-do:hover .how-bg-img{
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+	filter:grayscale(1%);
+}
+#how-we-do .how-contents{
+	padding:60px 30px;
+	background: #006d7b;
+}
+#how-we-do .how-contents ul{
+
+}
+#how-we-do .how-contents ul li{
+	padding-left: 50px;
+    position: relative;
+	margin-bottom:26px;
+}
+#how-we-do .how-contents ul li:before{
+	font-family: FontAwesome;
+	content: "\f209";
+    position: absolute;
+    font-size: 39px;
+    color: #ffffff;
+    left: 0;
+}
+
+
+
+/* =======================================
+ header#4
+========================================*/
+#header4 {
+	background: #212529;
+  background:
+    linear-gradient(
+      rgba(53, 92, 125, 0.8), /* #355c7d */ rgba(8, 109, 123, 0.8), /* #6c5b7b */ rgba(0, 190, 192, 0.8) /* #c06c7b */
+    ),
+    url('https://cdn.stocksnap.io/img-thumbs/960w/Y01VDYAX63.jpg') no-repeat left top;
+  background-size: cover;
+	z-index: 0; /* bottom layout */
+}
+#header4 .caption {
+	z-index: 5;
+  text-align: center;
+  color: #fff;
+}
+#header4 .caption .title {
+	margin-bottom: 1.5rem;
+}
+#header4 .caption .text {
+	margin-bottom: 1.5rem;
+}
+#header4 .caption .action {
+  display: flex;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  width: 70%;
+}
+/*=== Large devices (desktops, 992px and up) ===*/
+@media (min-width: 992px) {
+#header4 .caption .action {
+  margin-left: 10%;
+  width: 80%;
+}
+}
+
+
+
+
+
+a:hover{
+    text-decoration:none;
+}
+.section-padding {
+	padding: 60px 0;
+
+}
+.bottom {
+    background-color: #212529;
+}
+.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.copyright a {
+    color: #f2ff49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #d1caca;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+
+
+.logo-header {
+	background: linear-gradient(rgba(62, 63, 64, 0.6), rgba(62, 63, 64, 0.6)), url("https://images.pexels.com/photos/356065/pexels-photo-356065.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-position: center bottom;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
+
+.logo-header h1 {
+	font-size: 3rem;
+	font-weight: 300;
+	margin: 0 auto 0.2em auto;
+}
+
+.logo-header p {
+	font-size: 1.15rem;
+	width: 80%;
+	margin: 0 auto 2em auto;
+}
+
+.logo-header .logo {
+	margin: 0 auto 1em auto;
+}
+
+.logo-header .btn {
+	padding: 10px 26px;
+	background-color: #313131;
+	color: #FFF;
+	display: inline-block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	text-decoration: none;
+	border: solid 2px #313131;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+.logo-header .btn:hover {
+	color: #FFF;
+	background-color: #1f69ff;
+	border-color: #1f69ff;
+}
+
+@media (min-width: 992px) {
+	.logo-header {
+		height: 100vh;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.logo-header h1 {
+		font-size: 4rem;
+	}
+	.logo-header p {
+		width: 60%;
+	}
+}
+
+@media (max-width: 480px) {
+	.logo-header h1 {
+		font-size: 2.4rem;
+	}
+}

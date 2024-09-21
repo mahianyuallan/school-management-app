@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="../static/js/script.js"></script>
+</head>
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#"> SMA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home page <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/adminedit">Edit</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/checkresults">Check results</a>
+        <!--   </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+          -->
+        </ul>
+
+          <button class="btn btn-outline-success my-2 my-sm-0" id="header-btn2"><a href="/logout" style="color:white">Log Out</button>
+
+      </div>
+    </nav>
+
+    <br>
+    <br>
+
+<!--Top Section-->
+<section class="logo-header">
+   <div class="container h-100">
+      <div class="row h-100 align-items-center">
+         <div class="col-12 col-md-12 text-center header-content">
+            <!-- <img src="" class="img-fluid logo" alt="logo"> -->
+            <h1>Hello {{ user }}</h1>
+            <p>You Have admin permissions and access</p>
+            <p>
+               <a class="btn btn-primary rounded" href="/adminedit">Admin Edit</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<!--Bottom Footer-->
+		<div class="bottom section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright">
+							<p>© <span>2020</span> <a href="/" class="transition">SMA</a> All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--Bottom Footer-->
+</body>
+</html>
