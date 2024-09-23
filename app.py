@@ -9,12 +9,7 @@ import cx_Oracle
 import config as cg
 
 
-"""
-app = Flask(__name__)
 
-
-
-"""
 app = Flask(__name__)
 app.secret_key ='lumber jack'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'oracle+cx_oracle://SYSTEM:Password1@localhost:1521/orcl'
