@@ -29,6 +29,41 @@ $(function() {
     $(target).show();
   });
 });
+const unitsByCourse = {
+    1: [
+        { id: 2, name: 'Data Algorithms' }
+    ],
+    2: [
+        { id: 3, name: 'Calculus' }
+    ],
+    3: [
+        { id: 5, name: 'Mechanics' }
+    ],
+    4: [
+        { id: 6, name: 'Calculus' }
+    ],
+    5: [
+        { id: 7, name: 'Quantum Mechanics' }
+    ]
+};
+function filterUnits() {
+    const courseSelect = document.querySelector('.course-select');
+    const unitSelect = document.querySelector('.unit-select');
+    const selectedCourse = courseSelect.value;
+
+    // Clear the current unit dropdown options
+    unitSelect.innerHTML = '<option value="" disabled selected>Select Unit</option>';
+
+    // Populate the unit dropdown with options related to the selected course
+    if (unitsByCourse[selectedCourse]) {
+        unitsByCourse[selectedCourse].forEach(unit => {
+            const option = document.createElement('option');
+            option.value = unit.id;
+            option.text = unit.name;
+            unitSelect.appendChild(option);
+        });
+    }
+}
 /*
 const unitsByCourse = {
   1: [

@@ -34,9 +34,17 @@
         <input type="text" id="login" name="FIRST_NAME" placeholder="First Name*" required=True>
         <input type="text" id="login" name="LAST_NAME" placeholder="Last Name*" required=True>
         
-        <input type="text" id="login" name="COURSE_ID" placeholder="Course Id*" required=True>
-        <input type="text" id="login" name="UNIT_ID" placeholder="Unit Id*" required=True>
-      
+        <select id="login" class="course-select" name="COURSE_ID" required onchange="filterUnits()">
+          <option value="" disabled selected>Select Course</option>
+          <option value="1">Data Structures</option>
+          <option value="2">Calculus</option>
+          <option value="3">Quantum Mechanics</option>
+          <option value="4">Organic Chemistry</option>
+          <option value="5">Cell Biology</option>
+      </select>
+      <select id="login" class="unit-select" name="UNIT_ID" required>
+        <option value="" disabled selected>Select Unit</option>
+    </select>
         <!--
       <select id="login" class="course-select" name="COURSE_ID" required onchange="filterUnits()">
         <option value="" disabled selected>Select Course</option>
@@ -50,10 +58,7 @@
         <option value="8">CONSTRUCTION</option>
         <option value="24">Space Exploration</option>
     </select>
-    <select id="login" class="unit-select" name="UNIT_ID" required>
-      <option value="" disabled selected>Select Unit</option>
-      
-  </select>
+    
 -->
       <input type="password" id="login"  name="PASSWORD" placeholder="password*"required=True>
       <input type="submit" class="fadeIn fourth" value="Sign up">
