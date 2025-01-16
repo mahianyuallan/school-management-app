@@ -318,51 +318,24 @@ def login():
 
 @app.route('/checkresults', methods=['POST', 'GET'])
 def checkresults():
-    USER = session.get('name')
-    if request.method == 'POST':
-        if USER == "admin":
-            STUDENT_ID = request.form['STUDENT_ID']
-            USERNAME = request.form['USERNAME']
-            sql = '''
-                SELECT S.USERNAME, S.FIRST_NAME, S.STUDENT_ID, R.CAT_1, R.CAT_2, R.CAT_3, R.EXAM_MARKS, R.GRADE
-                FROM STUDENT S
-                JOIN RESULTS R ON S.STUDENT_ID = R.STUDENT_ID
-                WHERE S.USERNAME = :USERNAME AND S.STUDENT_ID = :STUDENT_ID
-            '''
+    connection = cx_Oracle.connect(cg.name,cg.password,cg.host)
+    cursor = connection.cursor()
 
-            try:
-                with cx_Oracle.connect(cg.name, cg.password, cg.host) as connection:
-                    with connection.cursor() as cursor:
-                        # Use a dictionary for bind variables
-                        cursor.execute(sql, {'USERNAME': USERNAME, 'STUDENT_ID': STUDENT_ID})
-                        row = cursor.fetchone()
-                        if row:
-                            student_results = row
-                            return render_template('report.html', student_results=student_results)
-                        else:
-                            return render_template('report.html', error="No results found")
-            except cx_Oracle.Error as error:
-                return render_template('report.html', error=str(error))
-        else:
-            sql = 'SELECT * FROM STUDENT_RESULTS WHERE USERNAME = :USER'
-
-            try:
-                with cx_Oracle.connect(cg.name, cg.password, cg.host) as connection:
-                    with connection.cursor() as cursor:
-                        # Use a dictionary for bind variables
-                        cursor.execute(sql, {'USER': USER})
-                        row = cursor.fetchone()
-                        if row:
-                            student_results = row
-                            return render_template('report.html', student_results=student_results)
-                        else:
-                            student_results = 'Your Results are not out yet. Please check again later'
-                            return render_template('report.html', student_results=student_results)
-            except cx_Oracle.Error as error:
-                return render_template('report.html', error=str(error))
+    # Execute a query to fetch data
+    cursor.execute("""
+        SELECT results_id, student_id, exam_id, cat_1, cat_2, cat_3, exam_marks, grade
+    FROM results
+    """)
     
-    # If the request method is not POST or USER is not "admin"
-    return render_template('enterexams.html', error="Invalid request")
+    # Fetch all the rows
+    students = cursor.fetchall()
+
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+
+    return render_template('StudentResults.html', students=students)
+    
 """
 
 @app.route('/checkresults',methods=['POST','GET'])
